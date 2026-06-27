@@ -12,6 +12,21 @@
     <WinUISDKReferences>false</WinUISDKReferences>
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
+    <!-- 1. 启用单文件打包，所有依赖嵌入exe -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <!-- 2. 自包含，目标机器无需装.NET运行时 -->
+    <SelfContained>true</SelfContained>
+    <!-- 3. 裁剪未使用代码/程序集，删除无用dll -->
+    <PublishTrimmed>true</PublishTrimmed>
+    <!-- 4. 关闭生成pdb调试文件、日志符号文件 -->
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <!-- 5. 关闭多余输出文件 -->
+    <GeneratePackageOnBuild>false</GeneratePackage>
+    <!-- 6. 禁用冗余xml注释文档 -->
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <!-- 7. 压缩单文件，减小体积 -->
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,6 +54,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.2270" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Pages\" />
   </ItemGroup>
 
   <!--
