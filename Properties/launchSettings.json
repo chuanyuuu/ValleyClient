@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ValleyClient (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ValleyClient (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
