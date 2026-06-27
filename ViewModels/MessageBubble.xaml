@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="ValleyClient.ViewModels.MessageBubble"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ValleyClient.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="80" d:DesignWidth="360">
+    <UserControl.Resources>
+        <!-- 对方消息气泡样式（灰色左对齐） -->
+        <Style x:Key="OtherBubbleStyle" TargetType="Border">
+            <Setter Property="Background" Value="#2E2E2E"/>
+            <Setter Property="CornerRadius" Value="12,12,12,4"/>
+        </Style>
+        <!-- 自己消息气泡样式（蓝色右对齐） -->
+        <Style x:Key="SelfBubbleStyle" TargetType="Border">
+            <Setter Property="Background" Value="#0078D4"/>
+            <Setter Property="CornerRadius" Value="12,12,4,12"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Padding="8,4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- 对方头像 -->
+        <Border x:Name="AvatarBorder" Grid.Column="0" Width="36" Height="36" CornerRadius="18" Margin="0,0,8,0"
+                Background="#444">
+            <TextBlock x:Name="AvatarText" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+        </Border>
+
+        <!-- 消息气泡主体 -->
+        <Border Grid.Column="1" Padding="10,8" MaxWidth="260">
+            <StackPanel>
+                <!-- 发送者昵称 -->
+                <TextBlock x:Name="SenderNameTxt" FontSize="11" Foreground="#AAAAAA" Margin="0,0,0,4"/>
+                <!-- 消息文本 -->
+                <TextBlock x:Name="MsgContentTxt" FontSize="14" Foreground="White" TextWrapping="Wrap"/>
+                <!-- 发送时间 -->
+                <TextBlock x:Name="MsgTimeTxt" FontSize="10" Foreground="#BBBBBB" HorizontalAlignment="Right" Margin="0,4,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <!-- 占位列（自己消息靠右留白） -->
+        <Border x:Name="SpacerBorder" Grid.Column="2" Width="40"/>
+    </Grid>
+</UserControl>

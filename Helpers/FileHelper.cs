@@ -11,7 +11,7 @@ namespace ValleyClient.Helpers
         public static string LogsDir => Path.Combine(Root, "logs");
         public static string ConfigDir => Path.Combine(Root, "config");
         public static string CacheDir => Path.Combine(Root, "cache");
-            
+
         public static void CreateAllDirs()
         {
             CreateIfMissing(Root);

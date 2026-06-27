@@ -25,8 +25,8 @@
 
         <NavigationView Grid.Row="1" x:Name="MainNavView">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="首页" Icon="Home"/>
                 <NavigationViewItem Content="聊天" Icon="Message"/>
+                <NavigationViewItem Content="好友列表" Icon="Message"/>
                 <NavigationViewItem Content="组队房间" Icon="People"/>
             </NavigationView.MenuItems>
 
