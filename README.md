@@ -72,8 +72,6 @@ ValleyChat 专为游戏玩家小型社群设计，解决QQ/微信广告繁杂、
 - 通信：统一JSON数据包协议，区分请求包/服务端推送包
  
 📂 客户端目录说明
- 
-plaintext
   
 ValleyClient/
 ├─ Assets          图标、头像、静态资源
@@ -112,7 +110,6 @@ ValleyClient/
  
 SecretConfig.json 模板（自行填充密钥，禁止提交至开源仓库）
  
-json
   
 {
   "ClientPasswordSalt": "自定义客户端加密盐",
